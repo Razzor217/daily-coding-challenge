@@ -9,7 +9,12 @@
  * 
  */
 
+#ifndef HASHING_FUNCTION_INTERFACE_HEADER
+#define HASHING_FUNCTION_INTERFACE_HEADER
+
+
 #include <cstddef>
+
 
 namespace hashing
 {
@@ -41,3 +46,6 @@ namespace hashing
     };
 
 } // !namespace hashing
+
+
+#endif // !HASHING_FUNCTION_INTERFACE_HEADER

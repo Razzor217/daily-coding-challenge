@@ -9,6 +9,10 @@
  * 
  */
 
+#ifndef HASHING_META_UTILITIES_HEADER
+#define HASHING_META_UTILITIES_HEADER
+
+
 #include <type_traits>
 
 
@@ -22,3 +26,6 @@ namespace meta
     struct is_empty_pack : public std::true_type {}; 
 
 } // !namespace meta
+
+
+#endif // !HASHING_META_UTILITIES_HEADER

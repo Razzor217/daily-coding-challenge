@@ -10,6 +10,10 @@
  */
 
 
+#ifndef HASHING_TABLE_INTERFACE_HEADER
+#define HASHING_TABLE_INTERFACE_HEADER
+
+
 #include "meta.h"
 
 #include <cstddef>
@@ -50,3 +54,6 @@ namespace hashing
 
 
 } // !namespace hashing
+
+
+#endif // !HASHING_TABLE_INTERFACE_HEADER
