@@ -4,9 +4,9 @@
  * @brief Interface of hash functions
  * @version 0.1
  * @date 2022-08-09
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 #ifndef HASHING_FUNCTION_INTERFACE_HEADER
@@ -19,30 +19,32 @@
 namespace hashing
 {
 
-    template <class K, class V, std::size_t N> 
+    /**
+     * @brief Interface for hash functors.
+     *
+     * @tparam key The hashed key type
+     * @tparam size The hash value for keys of type `key`
+     */
+    template <typename key = std::size_t, typename size = std::size_t>
     class function
     {
     public:
-        using key_type = K;
-        using value_type = V;
-        using size_type = std::size_t;
+        /// @brief The hashed key type
+        using key_type = key;
 
-        using reference = value_type&;
-        using const_reference = value_type const&;
+        /// @brief The hash value for keys of type `key_type`
+        using size_type = S;
 
         /**
-         * @brief Compute the hash value of a given key
-         * 
-         * @param key Key to hash
-         * 
-         * @return value_type Resulting hash value
+         * @brief Computes the hash value for a given key
+         *
+         * @param key The key to hash
+         *
+         * @return size_type The resulting hash
          */
         virtual
-        value_type
-        hash(key const&) const = 0;
-
-    protected:
-        constexpr size_type _size {N};
+        size_type
+        operator()(key_type const& key) const = 0;
     };
 
 } // !namespace hashing

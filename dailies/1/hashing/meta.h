@@ -4,9 +4,9 @@
  * @brief Metaprogramming utilities
  * @version 0.1
  * @date 2022-08-09
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 #ifndef HASHING_META_UTILITIES_HEADER
@@ -23,7 +23,10 @@ namespace meta
     struct is_empty_pack : public std::bool_constant<sizeof...(Ts) == 0U> {};
 
     template <class...>
-    struct is_empty_pack : public std::true_type {}; 
+    struct is_empty_pack : public std::true_type {};
+
+    template <class A, class... B>
+    using is_same = std::disjunction<std::conjunction<std::is_same<A, B>...>, is_empty_pack<B...>>;
 
 } // !namespace meta
 
