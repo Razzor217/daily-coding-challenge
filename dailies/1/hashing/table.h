@@ -15,6 +15,7 @@
 
 
 #include <cstddef>
+#include <optional>
 
 
 namespace hashing
