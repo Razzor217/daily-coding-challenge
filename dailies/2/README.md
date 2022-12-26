@@ -14,7 +14,7 @@ $h(k) = k \mod m$ where $m$ denotes the hash table's size.
 ## Multiplication method
 
 $h(k) = \lfloor m (kA \mod 1) \rfloor$ where $m$ denotes the hash table's size
-and $0<A<1$. In this implementation, constants $s$ and $w$ are chosen s.t.
+and $0 < A < 1$. In this implementation, constants $s$ and $w$ are chosen s.t.
 $A=\frac{s}{w}$.
 
 ### Bit shifts
