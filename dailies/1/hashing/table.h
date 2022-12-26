@@ -14,8 +14,6 @@
 #define HASHING_TABLE_INTERFACE_HEADER
 
 
-#include "meta.h"
-
 #include <cstddef>
 
 
@@ -29,11 +27,11 @@ namespace hashing
      * @tparam T The mapped data type
      * @tparam hash_func The hash function to use
      */
-    template <typename key, typename T, typename hash_func>
+    template <typename Key, typename T, typename Hash>
     class table
     {
         /// @brief The hashed key type
-        using key_type = key;
+        using key_type = Key;
 
         /// @brief The mapped data type
         using mapped_type = T;
@@ -46,6 +44,10 @@ namespace hashing
 
         /// @brief Const reference to `value_type`
         using const_reference = value_type const&;
+
+        /// @brief Hash function
+        using hash = Hash;
+
 
         /**
          * @brief Insert a new key-value pair into the hash table

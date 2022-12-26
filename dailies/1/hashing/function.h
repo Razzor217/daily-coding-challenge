@@ -25,15 +25,15 @@ namespace hashing
      * @tparam key The hashed key type
      * @tparam size The hash value for keys of type `key`
      */
-    template <typename key = std::size_t, typename size = std::size_t>
+    template <typename Key = std::size_t, typename Size = std::size_t>
     class function
     {
     public:
         /// @brief The hashed key type
-        using key_type = key;
+        using key_type = Key;
 
         /// @brief The hash value for keys of type `key_type`
-        using size_type = S;
+        using size_type = Size;
 
         /**
          * @brief Computes the hash value for a given key
