@@ -31,7 +31,7 @@ namespace hashing
      * Then
      * \f[
      *   h(k) = 
-     *     \left\lfoor
+     *     \left\lfloor
      *       m \frac{ks \mod w}{w}
      *     \right\rfloor
      * \f]

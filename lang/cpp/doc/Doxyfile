@@ -1,0 +1,7 @@
+# Doxyfile 1.9.5
+
+PROJECT_NAME           = "Daily Coding Challenge"
+OUTPUT_DIRECTORY       = doc
+INPUT                  = ../../../dailies
+RECURSIVE              = YES
+EXTRA_PACKAGES         = amsmath amssymb

@@ -19,6 +19,11 @@
 namespace hashing
 {
 
+    /**
+     * @brief Identity hash function
+     *
+     * @tparam Key The hashed key type
+     */
     template <typename Key = std::size_t>
     class identity : public virtual function<Key, Key>
     {
@@ -26,6 +31,7 @@ namespace hashing
         using key_type = typename function<Key, Key>::key_type;
         using size_type = typename function<Key, Key>::size_type;
 
+        /// @see function::operator()()
         size_type
         operator() (key_type const& key) const override
         {
