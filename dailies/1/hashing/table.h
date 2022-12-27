@@ -26,11 +26,11 @@ namespace hashing
      *
      * @tparam key The hashed key type
      * @tparam T The mapped data type
-     * @tparam hash_func The hash function to use
      */
-    template <typename Key, typename T, typename Hash>
+    template <typename Key, typename T>
     class table
     {
+    public:
         /// @brief The hashed key type
         using key_type = Key;
 
@@ -45,9 +45,6 @@ namespace hashing
 
         /// @brief Const reference to `value_type`
         using const_reference = value_type const&;
-
-        /// @brief Hash function
-        using hash = Hash;
 
 
         /**
