@@ -25,8 +25,8 @@ namespace hashing
     template <
         typename Key,
         typename T,
-        typename Hash = multiplication_shift_xor<Key>,
-        std::size_t LogTableSize = 10>
+        std::size_t LogTableSize = 10,
+        typename Hash = multiplication_shift_xor<Key, LogTableSize>>
     class chaining : public virtual table<Key, T>
     {
     public:
@@ -39,9 +39,7 @@ namespace hashing
         /// @brief Hash function
         using hash = Hash;
 
-
-        static constexpr std::size_t size {1U << LogTableSize};
-
+        /// @see table::insert()
         bool
         insert(const_reference value) override
         {
@@ -49,6 +47,7 @@ namespace hashing
             return true;
         }
 
+        /// @see table::find()
         std::optional<mapped_type>
         find(key_type const& key) override
         {
