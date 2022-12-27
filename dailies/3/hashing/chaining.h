@@ -13,7 +13,7 @@
 #define HASHING_TABLE_CHAINING_HEADER
 
 
-#include <list>
+#include <array>
 #include <vector>
 
 #include <hashing/table.h>
@@ -22,6 +22,14 @@
 namespace hashing
 {
 
+    /**
+     * @brief Hash table implementation using chaining
+     *
+     * @tparam Key The hashed key type
+     * @tparam T The mapped data type
+     * @tparam LogTableSize Log2 of the hash table size
+     * @tparam Hash Used hash function
+     */
     template <
         typename Key,
         typename T,
@@ -67,15 +75,12 @@ namespace hashing
         }
 
     private:
-        using container = std::vector<std::list<value_type>>;
+        using container = std::array<std::vector<value_type>, 1U << LogTableSize>;
 
-        container c {1U << LogTableSize};
+        container c {};
         hash h {};
 
     };
-
-
-
 
 } // !namespace hashing
 
