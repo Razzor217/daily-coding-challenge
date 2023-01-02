@@ -13,6 +13,7 @@
 #define HASHING_FUNCTION_MULTIPLICATION_HEADER
 
 
+#include <cstdint>
 #include <cmath>
 
 #include <hashing/function.h>

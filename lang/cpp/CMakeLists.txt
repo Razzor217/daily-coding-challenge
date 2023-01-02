@@ -8,7 +8,7 @@ set(CMAKE_CXX_FLAGS "-std=c++17 -msse4.2 -Wall -Wextra -O3 -g")
 
 option(BUILD_DOC "Build documentation" ON)
 
-if (CMAKE_BUILD_TYPE MATCHES "^[Rr]elease")
+if (BUILD_DOC AND CMAKE_BUILD_TYPE MATCHES "^[Rr]elease")
     find_package(Doxygen)
     if (DOXYGEN_FOUND)
         set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/doc/Doxyfile)

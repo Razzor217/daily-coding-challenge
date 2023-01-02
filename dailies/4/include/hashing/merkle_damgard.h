@@ -20,6 +20,14 @@
 namespace hashing
 {
 
+    /**
+     * @brief Merkle-Damgard transformation to hash messages of arbitrary size
+     *
+     * @tparam Iterator The message iterator type
+     * @tparam T The message data type
+     * @tparam Key The hashed key type
+     * @tparam Hash The internal compression function to use
+     */
     template <
         typename Iterator,
         typename T = std::uint16_t,
@@ -34,11 +42,26 @@ namespace hashing
         static_assert(sizeof(T) < sizeof(Key));
         static_assert(2U * sizeof(T) >= sizeof(Key));
 
+        /// @brief The message iterator type
         using iterator_type = Iterator;
+
+        /// @brief The message data type
         using value_type = T;
+
+        /// @brief The hashed key type
         using key_type = Key;
+
+        /// @brief The hash function
         using hash = Hash;
 
+
+        /**
+         * @brief Computes the hash value of arbitrarily-sized messages
+         *
+         * @param begin Iterator to the start of the message
+         * @param end Iterator to the end of the message
+         * @return key_type The resulting message hash
+         */
         key_type
         operator() (Iterator begin, Iterator end)
         {
@@ -55,12 +78,22 @@ namespace hashing
             return hash_value;
         }
 
+        /**
+         * @brief Default constructor
+         *
+         */
         merkle_damgard() = default;
+
+        /**
+         * @brief Initialize the Merkle-Damgard with a given seed
+         *
+         * @param seed Initialization vector for Merkle-Damgard
+         */
         explicit merkle_damgard(key_type const& seed) : seed {seed} {}
 
     private:
-        static constexpr key_type const mask = ~0 << 8U * sizeof(value_type);
-        key_type seed;
+        static constexpr key_type const mask = ~0U << 8U * sizeof(value_type);
+        key_type seed {};
     };
 
 } // !namespace hashing

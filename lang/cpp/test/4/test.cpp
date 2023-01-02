@@ -6,7 +6,8 @@
 
 TEST(hashing_table_merkle_damgard_test, compile_test)
 {
-    hashing::merkle_damgard<std::vector<std::uint16_t>::iterator, std::uint16_t> md {};
+    std::uint32_t const seed = 0xffffffff;
+    hashing::merkle_damgard<std::vector<std::uint16_t>::iterator, std::uint16_t> md {seed};
 
     EXPECT_TRUE(true);
 }
