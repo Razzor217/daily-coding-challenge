@@ -4,9 +4,9 @@
  * @brief Type trait definitions for graph types
  * @version 0.1
  * @date 2023-02-19
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 #ifndef GRAPH_DETAIL_TRAITS_HEADER
@@ -17,7 +17,11 @@ namespace graph
 {
     namespace detail
     {
-
+        /**
+         * @brief Traits defined for edges
+         *
+         * @tparam Implementation edge implementation
+         */
         template <typename Implementation>
         struct edge_traits;
 

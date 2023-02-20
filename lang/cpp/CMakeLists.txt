@@ -3,7 +3,7 @@ project(dailies)
 
 enable_testing()
 
-set(CMAKE_CXX_FLAGS "-std=c++17 -msse4.2 -Wall -Wextra -O3 -g")
+set(CMAKE_CXX_FLAGS "-std=c++20 -msse4.2 -Wall -Wextra -O3 -g")
 
 
 option(BUILD_DOC "Build documentation" ON)
