@@ -17,14 +17,9 @@ namespace graph
 {
     namespace detail
     {
-        /**
-         * @brief Traits defined for edges
-         *
-         * @tparam Implementation edge implementation
-         */
+        // forward declaration
         template <typename Implementation>
         struct edge_traits;
-
     } // namespace detail
 } // namespace graph
 
